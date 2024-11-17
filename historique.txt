@@ -1,0 +1,44 @@
+
+
+Id                 : 1
+CommandLine        : Set-Location E:\PowerShell
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 19:46:31
+EndExecutionTime   : 17/11/2024 19:46:31
+
+Id                 : 2
+CommandLine        : Set-Location -Path E:\PowerShell\
+                     #Une écriture possible pour la création d'un dossier
+                     New-Item -ItemType Directory -Path E:\PowerShell\ -Name FolderTest1
+                     #Une autre écriture possible pour la création d'un dossier
+                     New-Item -ItemType Directory -Path E:\PowerShell\FolderTest2
+                     #Création de fichier vide dans le dossier c:\FolderTest
+                     New-Item -ItemType File -Path E:\PowerShell\FolderTest1 -Name File1
+                     New-Item -ItemType File -Path E:\PowerShell\FolderTest1 -Name File2
+                     New-Item -ItemType File -Path E:\PowerShell\FolderTest1 -Name File3
+                     New-Item -ItemType File -Path E:\PowerShell\FolderTest1 -Name File4
+                     New-Item -ItemType File -Path E:\PowerShell\FolderTest1 -Name File5
+                     #Création de fichier vide dans le dossier c:\FolderTest2
+                     $Count = 6
+                     Do
+                     {
+                         New-Item -ItemType File -Path E:\PowerShell\FolderTest2 -Name "File$Count"
+                         $Count++
+                     }
+                     While ($Count -lt 11)
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 19:47:16
+EndExecutionTime   : 17/11/2024 19:47:17
+
+Id                 : 3
+CommandLine        : New-Item -path EvenFolder -ItemType Directory ; New-Item -path OddFolder -ItemType Directory ; Move-Item -LiteralPath 
+                     .\FolderTest1\File1, .\FolderTest1\File3, .\FolderTest1\File5, .\FolderTest2\File7, .\FolderTest2\File9 -Destination .\OddFolder 
+                     ; Move-Item -LiteralPath .\FolderTest1\File2, .\FolderTest1\File4, .\FolderTest2\File6, .\FolderTest2\File8, .\FolderTest2\File10 
+                     -Destination .\EvenFolder ; Get-History > historique.txt ; Get-ChildItem -path .\EvenFolder, .\OddFolder -Recurse > listing.txt
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 19:47:34
+EndExecutionTime   : 17/11/2024 19:47:35
+
+
+
+
